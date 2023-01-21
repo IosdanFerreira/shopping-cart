@@ -1,0 +1,25 @@
+@import "../../../scss/variables.scss";
+
+.top__header {
+    background: $primary;
+    padding: 10px 0;
+
+    .top__header__left {
+        text-align: left;
+
+        p {
+            color: $white;
+            margin: 0;
+        }
+    }
+
+    .top__header__right {
+        text-align: right;
+        color: $white !important;
+
+        p {
+            color: $white;
+            margin: 0;
+        }
+    }
+}

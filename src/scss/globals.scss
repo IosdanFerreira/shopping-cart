@@ -1,0 +1,21 @@
+@import "./variables.scss";
+
+* {
+  font-family: $primary_font !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $secondary_font !important;
+  color: $black;
+  font-weight: bold !important;
+}
+
+p {
+  color: $black;
+  font-weight: 300;
+}
