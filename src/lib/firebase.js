@@ -4,7 +4,7 @@ import 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDRdFcwUPnw0xctIJ34gDoWzziDGKxi1Lc",
-    authDomain: "shopping-cart-7aff2.firebaseapp.com",
+    authDomain: "shopping-cart-o4c9pdnc5-iosdanferreira.vercel.app",
     projectId: "shopping-cart-7aff2",
     storageBucket: "shopping-cart-7aff2.appspot.com",
     messagingSenderId: "208193646118",
