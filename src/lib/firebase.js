@@ -3,9 +3,9 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  apiKey: "AIzaSyDRdFcwUPnw0xctIJ34gDoWzziDGKxi1Lc",
+  authDomain: "shopping-cart-7aff2.firebaseapp.com",
+  projectId: "shopping-cart-7aff2",
 };
 
 export const app = getApps().length > 0 ? getApps()[0] : initializeApp(firebaseConfig)

@@ -2,7 +2,7 @@ import { GraphQLClient } from "graphql-request";
 
 export function request({ query, variables, includeDrafts, excludeInvalid }) {
     const headers = {
-      authorization: `Bearer ${process.env.NEXT_PUBLIC_DATO_CMS_API_TOKEN}`,
+      authorization: `Bearer ${"e82422ed75dc17082f90c69c45ddbf"}`,
     };
     if (includeDrafts) {
       headers['X-Include-Drafts'] = 'true';
