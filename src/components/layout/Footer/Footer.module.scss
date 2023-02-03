@@ -1,0 +1,67 @@
+@import "@/scss/variables.scss";
+
+.footer__box__container {
+    background: $primary;
+    padding: 40px 0;
+
+    .col__footer__contact {
+        h4,
+        p {
+            color: $white;
+        }
+
+        h4 {
+            margin-bottom: 20px;
+        }
+
+        .social__footer {
+            display: flex;
+            justify-content: baseline;
+            align-items: center;
+
+            a {
+                margin-right: 10px;
+                color: $white;
+                font-size: 1.9rem;
+                transition: .2s ease;
+            }
+        }
+    }
+
+    .col__footer__faq {
+        h4, a {
+            color: $white;
+        }
+
+        h4 {
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: block;
+
+            margin-bottom: 0.6rem;
+
+            &:hover {
+                text-decoration: underline !important;
+            }
+        }
+    }
+}
+
+.col__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    p {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .col__footer__faq h4 {
+        margin-top: 40px;
+    }
+}

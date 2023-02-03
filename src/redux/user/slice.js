@@ -1,31 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Firebase
-import firebase from '../../lib/firebase'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const initialState = {
     user: null,
-    loading: false
+    loading: true
 }
 
 const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        signIn: (state, action) => {
-            state.user = action.payload.user;
+        signInWithGoogle: (state, action) => {
+            state.user = action.payload
+            state.loading = false
         },
 
-        singOut: (state, action) => {
-            console.log(action.payload)
+        singOutWhitGoogle: (state, action) => {
+            state.user = action.payload
+            state.loading = false
         }
     }
 })
 
 export const {
-    signIn,
-    singOut
+    signInWithGoogle,
+    singOutWhitGoogle
 } = userSlice.actions
 
 export default userSlice.reducer

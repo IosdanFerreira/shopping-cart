@@ -4,6 +4,15 @@
   font-family: $primary_font !important;
 }
 
+
+main {
+  padding: 25vh 0;
+}
+
+body {
+  background: #e6e6e6 !important;
+}
+
 h1,
 h2,
 h3,
@@ -18,4 +27,42 @@ h6 {
 p {
   color: $black;
   font-weight: 300;
+}
+
+figure {
+  margin: 0 !important;
+  position: relative;
+}
+
+img {
+  position: relative !important;
+}
+
+input {
+  outline: none;
+}
+
+ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+button {
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+::placeholder {
+  font-size: 15px;
 }

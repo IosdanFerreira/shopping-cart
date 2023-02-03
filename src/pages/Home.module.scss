@@ -1,0 +1,8 @@
+@import "@/scss/variables.scss";
+
+.col__products {
+    display: flex;
+    gap: 34px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}

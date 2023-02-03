@@ -1,17 +1,14 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDRdFcwUPnw0xctIJ34gDoWzziDGKxi1Lc",
-    authDomain: "shopping-cart-o4c9pdnc5-iosdanferreira.vercel.app",
-    projectId: "shopping-cart-7aff2",
-    storageBucket: "shopping-cart-7aff2.appspot.com",
-    messagingSenderId: "208193646118",
-    appId: "1:208193646118:web:632cedf4f2b6fe89f940e7"
-  };
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+};
 
-initializeApp(firebaseConfig)
+export const app = getApps().length > 0 ? getApps()[0] : initializeApp(firebaseConfig)
 
 const auth = getAuth()
 const googleProvider = new GoogleAuthProvider()

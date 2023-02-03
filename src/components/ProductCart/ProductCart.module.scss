@@ -1,0 +1,30 @@
+@import "@/scss/variables.scss";
+
+.product__cart__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+
+    .button__remove__product__to__cart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        border: none;
+        font-size: 1rem;
+    }
+
+    .product__cart__img {
+        width: 200px;
+        height: auto;
+        padding: 15px;
+    }
+
+    .product__cart__subtotal {
+        span {
+            display: block;
+        }
+    }
+}

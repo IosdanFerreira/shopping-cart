@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // redux
 import { Provider } from 'react-redux';
-import store from '../redux/store'
+import store from '@/redux/store'
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 
@@ -18,11 +18,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={<Loader />} persistor={persistor}>
+      {/* <PersistGate loading={<Loader />} persistor={persistor}> */}
         <GlobalContainer>
           <Component {...pageProps} />
         </GlobalContainer>
-      </PersistGate>
+      {/* </PersistGate> */}
 
     </Provider>
   )

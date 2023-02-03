@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
+        "Offcanvas",
         "persistor"
-    ]
+    ],
+    "dotenv.enableAutocloaking": false
 }

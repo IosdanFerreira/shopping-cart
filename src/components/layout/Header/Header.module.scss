@@ -1,25 +1,247 @@
-@import "../../../scss/variables.scss";
+@import "@/scss/variables.scss";
+@import "@/scss/mixins.scss";
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
 
 .top__header {
     background: $primary;
-    padding: 10px 0;
+    padding: 20px 0;
 
-    .top__header__left {
-        text-align: left;
+    .col__header__logo {
+        a {
+            display: flex;
+            align-items: center;
+            text-align: left;
 
-        p {
-            color: $white;
-            margin: 0;
+            h1 {
+                color: $white;
+                margin: 0;
+                font-size: 2rem;
+
+                span {
+                    color: $warning;
+                    font-weight: 300;
+                    font-family: $secondary_font !important;
+                }
+            }
         }
     }
 
-    .top__header__right {
-        text-align: right;
-        color: $white !important;
+    .col__search__filter {
+        @include align__center;
 
-        p {
-            color: $white;
-            margin: 0;
+        form {
+            @include align__center;
+            width: 100%;
+
+            input {
+                width: 95%;
+                border: 0;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding: 6px 8px;
+            }
+
+            button {
+                @include align__center;
+                outline: none;
+                border: 0;
+                background: $tertiary;
+                color: $black;
+                padding: 10px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                transition: 0.2s ease;
+
+                &:hover {
+                    background: $warning;
+                }
+            }
         }
+    }
+
+    .col__header__options {
+        @include align__center;
+        justify-content: space-evenly;
+
+        a {
+            @include align__center;
+            color: $white;
+            text-transform: uppercase;
+            position: relative;
+
+            svg {
+                font-size: 1.8rem;
+            }
+
+            span {
+                font-size: 0.6rem;
+                padding: 0 5px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                span {
+                    font-size: 0.7rem;
+                    padding: 0;
+                    font-weight: bolder;
+                }
+            }
+        }
+
+        .button_badge__cart {
+            all: unset;
+            color: $white;
+            background: transparent;
+            border-radius: 50%;
+            padding: 6px;
+            width: 30px;
+            height: 30px;
+            transition: 0.3s ease;
+            position: relative;
+            font-size: 1.6rem;
+            cursor: pointer;
+
+            &:hover {
+                background: #e6e6e621;
+            }
+
+            .space__badge__cart {
+                position: absolute;
+                top: 2px;
+                left: 20px;
+
+                .badge__cart sup {
+                    @include align__center;
+                }
+            }
+        }
+
+        .button_open__menu__mobile {
+            display: none;
+        }
+    }
+}
+
+.container__nav__header {
+    background: $secondary;
+    padding: 10px 0;
+
+    .nav__categories {
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                padding: 5px 10px;
+                margin: 0 5px;
+                border-radius: 5px;
+                transition: 0.2s ease;
+
+                &:hover {
+                    background: #e6e6e621;
+                }
+
+                a {
+                    color: $white;
+                }
+
+                .button__open__menu_categories {
+                    display: flex;
+                    all: unset;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .top__header {
+        .col__header__logo a h1 {
+            font-size: 1.3rem;
+        }
+
+        .col__header__options {
+            a {
+                svg {
+                    font-size: 1.4rem;
+                }
+
+                span {
+                    display: none;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            .button_badge__cart {
+                font-size: 1.2rem;
+
+                .space__badge__cart {
+                    position: absolute;
+                    top: 2px;
+                    left: 20px;
+
+                    .badge__cart sup {
+                        @include align__center;
+                        min-width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .container__nav__header {
+        .nav__categories {
+            ul {
+                li {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .top__header {
+        .col__header__logo {
+            @include align__center;
+
+            a {
+                @include align__center;
+                h1 {
+                    display: none;
+                }
+            }
+        }
+
+        .col__header__options {
+            justify-content: space-between;
+            a {
+                display: none;
+            }
+
+            .badge__cart__container {
+                display: block;
+            }
+
+            .button_open__menu__mobile {
+                display: block;
+                all: unset;
+                color: $white;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .container__nav__header {
+        display: none;
     }
 }
