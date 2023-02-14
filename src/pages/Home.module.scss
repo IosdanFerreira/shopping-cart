@@ -2,7 +2,8 @@
 
 .col__products {
     display: flex;
-    gap: 34px;
+    justify-content: space-between;
+    gap: 20px;
     flex-wrap: wrap;
     margin-top: 40px;
 }

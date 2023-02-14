@@ -146,11 +146,11 @@ export default function Header() {
                         type="button"
                         className={styles.button__open__menu_categories}
                       >
-                        <HiMenuAlt1 /> Todos os Departamentos
+                        <HiMenuAlt1 /> Todas as categorias
                       </button>
                     </li>
                     <li>
-                      <Link href="/">Atendimento ao cliente</Link>
+                      <Link href='/'>Atendimento ao cliente</Link>
                     </li>
                   </ul>
                 </nav>
@@ -161,10 +161,7 @@ export default function Header() {
       </header>
 
       {openCart && (
-        <Cart
-          handleOpenCart={openCart}
-          handleCloseCart={handleCloseCart}
-        />
+        <Cart handleOpenCart={openCart} handleCloseCart={handleCloseCart} />
       )}
     </>
   );

@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
+        "categorie",
         "Offcanvas",
-        "persistor"
+        "persistor",
+        "reduxjs"
     ],
     "dotenv.enableAutocloaking": false
 }

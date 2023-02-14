@@ -1,11 +1,6 @@
 @import "@/scss/variables.scss";
 @import "@/scss/mixins.scss";
 
-.header {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-}
 
 .top__header {
     background: $primary;
@@ -163,7 +158,7 @@
 @media only screen and (max-width: 992px) {
     .top__header {
         .col__header__logo a h1 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .col__header__options {
@@ -210,6 +205,11 @@
 }
 
 @media only screen and (max-width: 576px) {
+    .header {
+        position: fixed;
+        z-index: 10
+    }
+
     .top__header {
         .col__header__logo {
             @include align__center;

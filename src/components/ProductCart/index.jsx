@@ -6,20 +6,32 @@ import Image from "next/image";
 
 // Redux
 import { useDispatch } from "react-redux";
-import { removeProductsToCart } from "@/redux/cart/slice";
+import { removeProductsToCart, increaseProductToCart, decreaseProductToCart } from "@/redux/cart/slice";
 
 // Icons
 import { IoCloseSharp } from "react-icons/io5";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+
 
 export default function ProductCart({ product }) {
   const dispatch = useDispatch();
 
+
+  // Add product to cart
   function handleRemoveProductToCart(event) {
-    event.preventDefault()
+    event.preventDefault();
     dispatch(removeProductsToCart(product));
   }
-  
-  const subTotal = parseFloat(product.price) * parseFloat(product.quantity)
+
+  // Increase the quantity that the product to  cart
+  function handleIncreaseProductToCart() {
+    dispatch(increaseProductToCart(product))
+  }
+
+   //Decrease the quantity that the product to cart
+   function handleDecreaseProductToCart() {
+    dispatch(decreaseProductToCart(product))
+  }
 
   return (
     <div className={styles.product__cart__container}>
@@ -33,14 +45,25 @@ export default function ProductCart({ product }) {
         <Image src={product.images[0].url} alt={product.name} fill />
       </figure>
 
-      <div className={styles.product__cart__text}>
-        <p>{product.name.substring(0, 40) + "..."}</p>
-        <span>{product.price}</span>
+      <div className={styles.product__cart__content}>
+        <div className={styles.product__cart__info}>
+          <p>{product.name.substring(0, 40) + "..."}</p>
 
-        <div className={styles.product__cart__subtotal}>
-          <span>{product.quantity}</span>
-          <span>Subtotal{subTotal.toFixed(2)}</span>
+          <div className={styles.product__cart__quantity}>
+            <button type="button" onClick={handleDecreaseProductToCart}>
+              <AiOutlineMinus />
+            </button>
+            {product.quantity}
+
+            <button type="button" onClick={handleIncreaseProductToCart}>
+              <AiOutlinePlus />
+            </button>
+          </div>
         </div>
+
+        <span>R$ {product.price}</span>
+
+        <div className={styles.product__cart__subtotal}></div>
       </div>
     </div>
   );
