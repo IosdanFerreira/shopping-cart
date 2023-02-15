@@ -69,8 +69,8 @@ export default function Product({ products }) {
                       },
                       largeImage: {
                         src: `${mainImage}`,
-                        width: 1200,
-                        height: 1800 ,
+                        width: 1000,
+                        height: 1600 ,
                       },
                       lensStyle: {
                         background: "hsla(0, 0%, 100%, .3)",

@@ -27,6 +27,9 @@ import { RiShoppingCartLine } from "react-icons/ri";
 
 // Hooks
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 export default function Header() {
   // Dispatch reference
@@ -66,6 +69,27 @@ export default function Header() {
     setOpenCart(false);
   };
 
+  // Router
+  const router = useRouter();
+
+  // Search
+
+  const formik = useFormik({
+    initialValues: {
+      searchProduct: "",
+    },
+    onSubmit: (values) => {
+      if (values !== "" && values !== null) {
+        router.push(`/search/${values.searchProduct.replace(/[- ]+/g, "-")}`);
+        formik.resetForm();
+      }
+      
+    },
+    validationSchema: Yup.object({
+      searchProduct: Yup.string().required('Campo vazio')
+    })
+  });
+
   return (
     <>
       <header className={styles.header}>
@@ -89,9 +113,16 @@ export default function Header() {
               </Col>
 
               <Col xs="7" md="6" lg="5" className={styles.col__search__filter}>
-                <form>
-                  <input type="text" placeholder="Qual produto deseja?" />
-                  <button type="button">
+                <form onSubmit={formik.handleSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Qual produto deseja?"
+                    id="searchProduct"
+                    name="searchProduct"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                  />
+                  <button type="submit">
                     <HiOutlineMagnifyingGlass />
                   </button>
                 </form>
@@ -150,7 +181,7 @@ export default function Header() {
                       </button>
                     </li>
                     <li>
-                      <Link href='/'>Atendimento ao cliente</Link>
+                      <Link href="/">Atendimento ao cliente</Link>
                     </li>
                   </ul>
                 </nav>
