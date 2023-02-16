@@ -78,10 +78,10 @@ export default function Header() {
     initialValues: {
       searchProduct: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values, {resetForm}) => {
       if (values !== "" && values !== null) {
         router.push(`/search/${values.searchProduct.replace(/[- ]+/g, "-")}`);
-        formik.resetForm();
+        resetForm()
       }
       
     },
@@ -120,7 +120,7 @@ export default function Header() {
                     id="searchProduct"
                     name="searchProduct"
                     onChange={formik.handleChange}
-                    value={formik.values.email}
+                    value={formik.values.searchProduct}
                   />
                   <button type="submit">
                     <HiOutlineMagnifyingGlass />
@@ -135,7 +135,7 @@ export default function Header() {
                     Meus <br /> <span>Favoritos</span>
                   </span>
                 </Link>
-                <Link href="/login">
+                <Link href="/">
                   <AiOutlineUser />
                   <span>
                     Minha conta <br /> <span>Entrar/Cadastro</span>

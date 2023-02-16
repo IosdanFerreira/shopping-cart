@@ -72,18 +72,14 @@ export default function Product({ products }) {
                       },
                       largeImage: {
                         src: `${mainImage}`,
-                        width: 1000,
-                        height: 1600,
+                        width: 900,
+                        height: 1200,
                       },
                       lensStyle: {
                         background: "hsla(0, 0%, 100%, .3)",
                         border: "1px solid #ccc",
                       },
                       enlargedImagePortalId: "portal",
-                      enlargedImageContainerDimensions: {
-                        width: "100%",
-                        height: "100%",
-                      },
                     }}
                   />
                 </div>

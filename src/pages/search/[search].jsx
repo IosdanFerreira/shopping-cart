@@ -29,14 +29,14 @@ export default function Search({ products }) {
       product.name
         .toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[\u0300-\u036f]/g, "")
         .replace(/ +/g, "-")
         .includes(
           lowerProduct
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[\u0300-\u036f]/g, "")
             .replace(/ +/g, "-")
-            )
+        )
     ) {
       return true;
     }
@@ -46,6 +46,11 @@ export default function Search({ products }) {
     <main>
       <Container>
         <Row>
+          <Col xs="12">
+            <p className={styles.text__result}>
+              Resultados para <span>{`"${router.query.search}"`}</span>
+            </p>
+          </Col>
           <Col xs="12" className={styles.col__products}>
             {searchProduct.length > 0
               ? searchProduct.map((product, index) => (

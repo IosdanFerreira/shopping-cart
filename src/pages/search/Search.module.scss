@@ -1,7 +1,14 @@
+@import '@/scss/variables.scss';
+
+.text__result span {
+    color: $dark_warning;
+    font-weight: 600;
+}
+
 .col__products {
     display: flex;
     justify-content: baseline;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 30px;
 }
