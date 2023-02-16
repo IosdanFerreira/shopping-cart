@@ -95,10 +95,31 @@
         padding: 5px 25px;
         border-radius: 5px;
         background: $primary;
-        transition: .2s ease;
+        transition: 0.2s ease;
 
         &:hover {
             background: $secondary;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .product__single__container {
+        padding: 120px 0;
+        min-height: 90vh;
+    }
+
+    .col__product__content {
+        margin-top: 30px;
+    }
+
+    .col__product__images {
+        .box__main__image {
+            div {
+                img {
+                    height: auto !important;
+                }
+            }
         }
     }
 }

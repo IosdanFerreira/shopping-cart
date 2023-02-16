@@ -156,6 +156,9 @@
 }
 
 @media only screen and (max-width: 992px) {
+    .header {
+        width: 100%;
+    }
     .top__header {
         .col__header__logo a h1 {
             font-size: 1.2rem;

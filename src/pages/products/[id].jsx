@@ -27,6 +27,9 @@ export default function Product({ products }) {
 
   const [mainImage, setMainImage] = useState(singleProduct.images[0].url);
 
+  // Page width
+  const pageWidth = window.screen.width;
+
   return (
     <>
       {singleProduct && (
@@ -70,7 +73,7 @@ export default function Product({ products }) {
                       largeImage: {
                         src: `${mainImage}`,
                         width: 1000,
-                        height: 1600 ,
+                        height: 1600,
                       },
                       lensStyle: {
                         background: "hsla(0, 0%, 100%, .3)",
@@ -87,10 +90,12 @@ export default function Product({ products }) {
               </Col>
 
               <Col lg="5" className={styles.col__product__content}>
-                <div
-                  id="portal"
-                  className={`${styles.portal__container} portal`}
-                ></div>
+                {pageWidth > 992 ? (
+                  <div
+                    id="portal"
+                    className={`${styles.portal__container} portal`}
+                  ></div>
+                ) : ''}
 
                 <h4>{singleProduct.name}</h4>
                 <p className={styles.single__product__mark}>
@@ -98,7 +103,7 @@ export default function Product({ products }) {
                 </p>
 
                 <Rate
-                className={styles.singleProduct__rate}
+                  className={styles.singleProduct__rate}
                   disabled
                   allowHalf
                   defaultValue={singleProduct.rate}
@@ -106,9 +111,17 @@ export default function Product({ products }) {
 
                 <h4>R${singleProduct.price}</h4>
 
-                <p className={styles.singleProduct__installment}>Em até 10x de {(singleProduct.price / 10).toFixed(2)} sem juros.</p>
+                <p className={styles.singleProduct__installment}>
+                  Em até 10x de {(singleProduct.price / 10).toFixed(2)} sem
+                  juros.
+                </p>
 
-                <button type="button" className={styles.singleProduct__buy__button}>Comprar</button>
+                <button
+                  type="button"
+                  className={styles.singleProduct__buy__button}
+                >
+                  Comprar
+                </button>
               </Col>
             </Row>
           </Container>
